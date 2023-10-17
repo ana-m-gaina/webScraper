@@ -48,28 +48,28 @@ You can access your web application in your web browser by going to http://local
 ## Using the Endpoints
 
 ### Retrieve Data from a Single Web Page
-Endpoint: /data
-Description: Use this endpoint to scrape and retrieve data from a single web page specified by the URL.
+Endpoint: /data <br />
+Description: Use this endpoint to scrape and retrieve data from a single web page specified by the URL. <br />
 GET ```http://localhost:5000/data?url=YOUR_WEB_PAGE_URL```
 
 ### Retrieve Data from a Single Web Page Using a Script
-Endpoint: /data-from-script
-Description: Use this endpoint to scrape data from a single web page based on the URL provided, utilizing a custom script for extraction.
+Endpoint: /data-from-script <br />
+Description: Use this endpoint to scrape data from a single web page based on the URL provided, utilizing a custom script for extraction. <br />
 GET ```http://localhost:5000/data-from-script?url=YOUR_WEB_PAGE_URL```
 
 ### Retrieve Links from a Web Page
-Endpoint: /pages
-Description: This endpoint enables you to fetch links from a specified web page.
+Endpoint: /pages <br />
+Description: This endpoint enables you to fetch links from a specified web page. <br />
 GET ```http://localhost:5000/pages?url=YOUR_WEB_PAGE_URL```
 
 ### Retrieve Data from Multiple Web Pages
-Endpoint: /getAll
-Description: Use this endpoint to collect data from multiple web pages linked from the specified URL.
+Endpoint: /getAll <br />
+Description: Use this endpoint to collect data from multiple web pages linked from the specified URL. <br />
 GET ```http://localhost:5000/getAll?url=YOUR_WEB_PAGE_URL```
 
 ### Retrieve Data from Multiple Pages Using a Script
-Endpoint: /get-all-from-script
-Description: Use this endpoint to collect data from multiple web pages linked from the specified URL using a custom script for extraction.
+Endpoint: /get-all-from-script <br />
+Description: Use this endpoint to collect data from multiple web pages linked from the specified URL using a custom script for extraction. <br />
 GET``` http://localhost:5000/get-all-from-script?url=YOUR_WEB_PAGE_URL```
 
 For each endpoint, replace YOUR_WEB_PAGE_URL with the URL of the web page you want to scrape.
@@ -98,8 +98,8 @@ Sample responses and data structure information can be found in the API document
 
 Testing the endpoint  ```https://wsa-test.vercel.app``` 
 
-for multiple pages and link retrieval use: 
+For multiple pages and link retrieval use: 
 ```https://wsa-test.vercel.app``` 
 
-for single pages use a blog post link similar to:
+For single pages use a blog post link similar to:
 ```https://wsa-test.vercel.app/blog/the-challenges-of-urban-living``` 
