@@ -88,15 +88,15 @@ or similar for a single page retrieval.
 
 Test the endpoint yourself:
 
-GET```http://localhost:5000/data?url=https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food)https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food```
+-GET```http://localhost:5000/data?url=https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food)https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food```
 
-GET```http://localhost:5000/data-from-script?url=https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food)https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food```
+-GET```http://localhost:5000/data-from-script?url=https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food)https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food```
 
-GET```http://localhost:5000/pages?url=https://wsa-test.vercel.app```
+-GET```http://localhost:5000/pages?url=https://wsa-test.vercel.app```
 
-GET```http://localhost:5000/getAll?url=https://wsa-test.vercel.app``
+-GET```http://localhost:5000/getAll?url=https://wsa-test.vercel.app``
 
-GET```http://localhost:5000/get-all-from-script?url=https://wsa-test.vercel.app``
+-GET```http://localhost:5000/get-all-from-script?url=https://wsa-test.vercel.app``
 
 
 
