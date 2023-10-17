@@ -1,0 +1,47 @@
+Data Retrieval Methods:
+1. Single Page Text Scraping: Get data from a single web page through text scraping.
+2. Single Page Script Scraping (Enhanced Performance): Improve single-page scraping performance with custom scripts.
+3. Multiple Pages Text Scraping: Scrape data from multiple web pages using text scraping.
+4. Multiple Pages Script Scraping (Enhanced Performance): Boost performance in scraping data from multiple linked web pages with custom scripts.
+
+Backend (Node.js):
+- Utilized Express.js for efficient routing.
+- Axios handled web page data retrieval.
+- Employed Puppeteer with custom element selectors for text and link scraping.
+- Developed a custom scraping script for text data and links.
+- Implemented a sentiment analysis scoring algorithm.
+- Thoroughly documented the API with Swagger.
+
+Frontend (React.js):
+- Built an interactive user interface using React.js.
+- Used Tailwind CSS for an attractive and responsive UI.
+- Axios facilitated data retrieval from the backend.
+- Users can conveniently download scraped data in CSV format.
+
+Standout Features:
+1. Data Scraping Versatility: The API offers multiple data scraping options for single web pages, custom script extraction, link fetching, and data collection from linked web pages.
+2. Download Feature: Users can download scraped data, enhancing usability.
+
+Proposed Features:
+- In the future would add a feature to compare sentiment scores by categories for more detailed data analysis.
+
+Sentiment Analysis Algorithm:
+- Prepared text for scoring by joining text, title, and description with spaces.
+- Removed irrelevant characters, converted text to lowercase, and expanded contractions.
+- Scored compounded words and filtered filler words.
+- Used the AFINN dictionary to score words.
+- The sentiment score is based on a dictionary with scores ranging from -5 to +5. A score below -10 is negative, above +10 is positive, and in between is neutral. A threshold of 10 balances accuracy and text complexities.
+
+Scraping Algorithm:
+- Developed a custom algorithm for script-based data extraction.
+- Identified the nesting patterns in scripts for data retrieval.
+- Used regular expressions to find the first relevant element.
+- Extracted and deconstructed elements as needed.
+- Directly accessed slug lists from the `index.js` file.
+- Custom approach improves data retrieval performance, especially for many web pages.
+
+Learning Experience:
+- Stepping out of my comfort zone to develop this Web Scraper API was a valuable learning experience.
+- Gained proficiency in Puppeteer, Swagger, and Tailwind CSS.
+- Discovered challenges and best practices in web scraping, emphasizing well-structured endpoints, clear documentation, and error handling for an accessible and dependable API.
+
