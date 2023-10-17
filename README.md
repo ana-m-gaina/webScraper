@@ -89,7 +89,7 @@ Each endpoint returns an object or a list of objects, and each object contains t
 -articletext: The main text or body of the content, typically containing the article's content. <br />
 -wordCount: The number of words in the article. <br />
 -sentiment: The sentiment associated with the content, which can be "positive," "negative," or "neutral."<br />
--sentimentScore: A score indicating the sentiment of the content. It's calculated based on a predefined dictionary of words and scores ranging from -5 to +5. If the score is lower than -5, the sentiment is considered negative, if it's higher than +5, it's positive; otherwise, it's neutral.
+-sentimentScore: A score indicating the sentiment of the content. It's calculated based on a predefined dictionary of words and scores ranging from -10 to +10. If the score is lower than -10, the sentiment is considered negative, if it's higher than +10, it's positive; otherwise, it's neutral.
 
 ## Using the test blog https://wsa-test.vercel.app/
 
