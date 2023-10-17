@@ -18,7 +18,7 @@ Clone your GitHub repository using the following command:
 
 ### Set Up and Run the Backend Server
 Navigate to the server directory:
-`cd webScraper/server`
+```cd webScraper/server```
 
 Install the server's dependencies:
 ```npm install```
@@ -30,6 +30,7 @@ Start the backend server:
 
 Open a new terminal window.
 Navigate to the client directory:
+bash
 ```cd webScraper/client```
 
 Install the frontend's dependencies:
@@ -48,7 +49,7 @@ You can access your web application in your web browser by going to http://local
 ### Retrieve Data from a Single Web Page
 Endpoint: /data
 Description: Use this endpoint to scrape and retrieve data from a single web page specified by the URL.
-GET `` http://localhost:5000/data?url=YOUR_WEB_PAGE_URL```
+GET ```http://localhost:5000/data?url=YOUR_WEB_PAGE_URL```
 
 ### Retrieve Data from a Single Web Page Using a Script
 Endpoint: /data-from-script
