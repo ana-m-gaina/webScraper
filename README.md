@@ -1,4 +1,12 @@
-# BLOG SCRAPER
+# Web Scraper API Documentation
+This API provides endpoints to scrape and retrieve data from web pages. 
+It offers various options, including scraping data from single web pages, using custom scripts for extraction, fetching links from web pages, and collecting data from multiple linked web pages.
+Blog: https://wsa-test.vercel.app/
+
+## Prerequisites
+
+Before using the Web Scraper API, ensure you have the following installed:
+- [Node.js](https://nodejs.org/): The API is built using Node.js.
 
 ## Setup
 
@@ -27,6 +35,7 @@ Navigate to the client directory:
 
 Install the frontend's dependencies:
 ```npm install```
+
 Start the frontend server:
 ```npm run dev```
 
@@ -34,3 +43,35 @@ Your frontend server should now be running
 
 ### Access the Application
 You can access your web application in your web browser by going to http://localhost:5173. The frontend server runs on port 3000, and it should be able to communicate with your backend server running on port 5000.
+
+## Using the Endpoints
+
+###Retrieve Data from a Single Web Page
+Endpoint: /data
+Description: Use this endpoint to scrape and retrieve data from a single web page specified by the URL.
+GET ``` http://localhost:5000/data?url=YOUR_WEB_PAGE_URL ```
+
+### Retrieve Data from a Single Web Page Using a Script
+Endpoint: /data-from-script
+Description: Use this endpoint to scrape data from a single web page based on the URL provided, utilizing a custom script for extraction.
+GET ``` http://localhost:5000/data-from-script?url=YOUR_WEB_PAGE_URL```
+
+### Retrieve Links from a Web Page
+Endpoint: /pages
+Description: This endpoint enables you to fetch links from a specified web page.
+GET ``` http://localhost:5000/pages?url=YOUR_WEB_PAGE_URL```
+
+### Retrieve Data from Multiple Web Pages
+Endpoint: /getAll
+Description: Use this endpoint to collect data from multiple web pages linked from the specified URL.
+GET ```http://localhost:5000/getAll?url=YOUR_WEB_PAGE_URL```
+
+###Scrape Multiple Pages Using a Script
+Endpoint: /get-all-from-script
+Description: Use this endpoint to collect data from multiple web pages linked from the specified URL using a custom script for extraction.
+GET``` http://localhost:5000/get-all-from-script?url=YOUR_WEB_PAGE_URL```
+
+For each endpoint, replace YOUR_WEB_PAGE_URL with the URL of the web page you want to scrape.
+
+
+###
