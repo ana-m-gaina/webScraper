@@ -30,7 +30,7 @@ Start the backend server:
 
 Open a new terminal window.
 Navigate to the client directory:
-bash
+
 ```cd webScraper/client```
 
 Install the frontend's dependencies:
@@ -42,7 +42,8 @@ Start the frontend server:
 Your frontend server should now be running
 
 ### Access the Application
-You can access your web application in your web browser by going to http://localhost:5173. The frontend server runs on port 3000, and it should be able to communicate with your backend server running on port 5000.
+You can access your web application in your web browser by going to http://localhost:5173 . The frontend server runs on port 3000, and it should be able to communicate with your backend server running on port 5000.
+
 
 ## Using the Endpoints
 
@@ -73,10 +74,27 @@ GET``` http://localhost:5000/get-all-from-script?url=YOUR_WEB_PAGE_URL```
 
 For each endpoint, replace YOUR_WEB_PAGE_URL with the URL of the web page you want to scrape.
 
+## Response
+Each endpoint returns an object or a list of objects, and each object contains the following properties:
+
+-id: An identifier for the content.
+-title: The title of the content.
+-slug: A URL-friendly version of the title.
+-url: The URL where the content can be accessed.
+-description: A brief description or summary of the content.
+-postdate: The publication date of the content in "YYYY-MM-DD" format.
+-category: The category or topic to which the content belongs.
+-image: The URL or path to an image associated with the content.
+-author: The name of the content's author.
+-articletext: The main text or body of the content, typically containing the article's content.
+-wordCount: The number of words in the article.
+-sentiment: The sentiment associated with the content, which can be "positive," "negative," or "neutral."
+-sentimentScore: A score indicating the sentiment of the content. It's calculated based on a predefined dictionary of words and scores ranging from -5 to +5. If the score is lower than -5, the sentiment is considered negative, if it's higher than +5, it's positive; otherwise, it's neutral.
+
 ## Using the test blog https://wsa-test.vercel.app/
 
 Sample responses and data structure information can be found in the API documentation at:
-``` http://localhost:5000/api-docs/  ``` 
+``` http://localhost:5000/api-docs/``` 
 
 Testing the endpoint  ```https://wsa-test.vercel.app``` 
 
@@ -85,7 +103,3 @@ for multiple pages and link retrieval use:
 
 for single pages use a blog post link similar to:
 ```https://wsa-test.vercel.app/blog/the-challenges-of-urban-living``` 
-
-
-
-
