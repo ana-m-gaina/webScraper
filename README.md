@@ -1,7 +1,6 @@
 # Web Scraper API Documentation
 This API provides endpoints to scrape and retrieve data from web pages. 
 It offers various options, including scraping data from single web pages, using custom scripts for extraction, fetching links from web pages, and collecting data from multiple linked web pages.
-Blog: https://wsa-test.vercel.app/
 
 ## Prerequisites
 
@@ -46,7 +45,7 @@ You can access your web application in your web browser by going to http://local
 
 ## Using the Endpoints
 
-###Retrieve Data from a Single Web Page
+### Retrieve Data from a Single Web Page
 Endpoint: /data
 Description: Use this endpoint to scrape and retrieve data from a single web page specified by the URL.
 GET ``` http://localhost:5000/data?url=YOUR_WEB_PAGE_URL ```
@@ -66,12 +65,25 @@ Endpoint: /getAll
 Description: Use this endpoint to collect data from multiple web pages linked from the specified URL.
 GET ```http://localhost:5000/getAll?url=YOUR_WEB_PAGE_URL```
 
-###Scrape Multiple Pages Using a Script
+### Retrieve Data from Multiple Pages Using a Script
 Endpoint: /get-all-from-script
 Description: Use this endpoint to collect data from multiple web pages linked from the specified URL using a custom script for extraction.
 GET``` http://localhost:5000/get-all-from-script?url=YOUR_WEB_PAGE_URL```
 
 For each endpoint, replace YOUR_WEB_PAGE_URL with the URL of the web page you want to scrape.
 
+## Using the test blog https://wsa-test.vercel.app/
 
-###
+Sample responses and data structure information can be found in the API documentation at  ``` http://localhost:5000/api-docs/  ``` 
+Use the endpoint  ``` https://wsa-test.vercel.app ``` for multiple pages and  ``` https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food)https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food``` or similar for a single page retrieval. 
+
+#OR
+
+Test the endpoint yourself:
+GET```http://localhost:5000/data?url=https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food)https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food```
+GET```http://localhost:5000/data-from-script?url=https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food)https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food```
+GET```http://localhost:5000/pages?url=https://wsa-test.vercel.app```
+GET```http://localhost:5000/getAll?url=https://wsa-test.vercel.app``
+GET```http://localhost:5000/get-all-from-script?url=https://wsa-test.vercel.app``
+
+
