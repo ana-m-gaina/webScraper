@@ -18,7 +18,7 @@ Clone your GitHub repository using the following command:
 
 ### Set Up and Run the Backend Server
 Navigate to the server directory:
-```cd webScraper/server```
+`cd webScraper/server`
 
 Install the server's dependencies:
 ```npm install```
