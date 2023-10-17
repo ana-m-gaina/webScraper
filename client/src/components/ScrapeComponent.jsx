@@ -11,14 +11,15 @@ export const ScrapeComponent = ({ section, description, endpoints }) => {
     url: "https://sample-url.com",
     description: "A sample description of the content.",
     postdate: "YYYY-MM-DD",
-    category: "Sample Category",
+    category: "Category",
     image: "/sample-image.jpg",
-    author: "Sample Author",
+    author: "Author name",
     articletext:
-      "This is a sample article text. You can replace it with your content.",
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem asperiores assumenda laborum doloribus perspiciatis iure dicta officiis hic vero ut!",
     wordCount: 0,
-    sentiment: "neutral",
-    sentimentScore: 0,
+    sentiment: "positive | negative| neutral",
+    sentimentScore:
+      "will provide a sentiment score based on a predefined dictionary wih words and scores form -10 to +10; if it is lower than -10 will be negative, if it is higher than +10 will be positive. else will be neutral",
   };
 
   const [consoleData, setConsoleData] = useState(placeholder);

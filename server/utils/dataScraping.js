@@ -2,7 +2,14 @@ const fetchDataService = require("../services/fetchDataService");
 const puppeteer = require("puppeteer");
 const { wordList, filter } = require("../utils/textProcessing");
 
-// Extracts a top-level element enclosed in the given braces '{}', '[]', '()' from a given string.
+/**
+ * This function extracts the contents of a top-level element enclosed within the specified opening and closing braces.
+ *
+ * @param {string} s - The input string containing the element.
+ * @param {string} e - The opening and closing braces to specify the element's boundaries, e.g., '{}' for curly braces, '[]' for square brackets, '()' for parentheses.
+ * @returns {string} The extracted top-level element.
+ */
+
 function extractTopLevelElement(s, e) {
   let stack = "";
   let level = 0;
@@ -35,7 +42,14 @@ function extractTopLevelElement(s, e) {
   return stack;
 }
 
-//Extracts and parses a JSON object starting with '{"props":' from the input data
+/**
+ * This function searches for a JSON object in the input data that starts with '{"props":' and parses it into a JavaScript object.
+ *
+ * @param {string} data - The input data containing the JSON object.
+ * @returns {Object} The parsed JavaScript object extracted from the input data.
+ * @throws {Error} If an error occurs during extraction or parsing.
+ */
+
 async function getProps(data) {
   try {
     const regex = /\{"props":/;
@@ -51,7 +65,12 @@ async function getProps(data) {
   }
 }
 
-// Scrapes text data from a specific element on a web page using puppeteer.
+/**
+ * This function launches a headless browser using Puppeteer, navigates to the provided web page endpoint, and scrapes text data from a specific element on the page.
+ *
+ * @param {string} endpoint - The URL of the web page to scrape text data from.
+ * @returns {Promise<string>} A Promise that resolves to the scraped text data.
+ */
 async function textScraper(endpoint) {
   const browser = await puppeteer.launch({ headless: "false" });
   const page = await browser.newPage();
@@ -93,7 +112,12 @@ async function textScraper(endpoint) {
   }
 }
 
-// Scrapes links from a specific element on a web page using puppeteer.
+/**
+ * This function launches a headless browser using Puppeteer, navigates to the provided web page endpoint, and scrapes links from a specific element on the page.
+ *
+ * @param {string} endpoint - The URL of the web page to scrape links from.
+ * @returns {Promise<{ links: string[] }>} A Promise that resolves to an object containing an array of links.
+ */
 async function linkScraper(endpoint) {
   const browser = await puppeteer.launch({ headless: "false" });
   const page = await browser.newPage();
@@ -127,7 +151,12 @@ async function linkScraper(endpoint) {
   }
 }
 
-// Finds the first "div" element.
+/**
+ * This function searches for the first occurrence of the specified element in the provided data string and returns the extracted substring containing the element.
+ *
+ * @param {string} data - The string containing the data to search within.
+ * @returns {string} The extracted substring containing the first occurrence of the specified element.
+ */
 function findFirstDiv(data) {
   const regex = /"div"/;
   const match = data.match(regex);
@@ -137,7 +166,13 @@ function findFirstDiv(data) {
   return div;
 }
 
-// Finds the n-th "div" element.
+/**
+ * This function searches for the n-th occurrence of the specified element in the provided data string and returns the extracted substring starting from that occurrence.
+ *
+ * @param {string} data - The string containing the data to search within.
+ * @param {number} n - The index of the occurrence to find (0-based).
+ * @returns {string} The extracted substring starting from the n-th occurrence of the specified element.
+ */
 function findNthElement(data, n) {
   const regex = /"div"/g;
   let matchList = [];
@@ -150,7 +185,13 @@ function findNthElement(data, n) {
   return substring;
 }
 
-// Finds the firts "children" element.
+/**
+ * Finds the first "children" element in a given data string and extracts it based on the specified selector.
+ *
+ * @param {string} data - The string containing the data to search within.
+ * @param {string} selector - The selector for the type of element to extract (e.g., "{}" for objects).
+ * @returns {string} The extracted element as a string.
+ */
 function findFirstChild(data, selector) {
   const reChidren = /children/;
   const match = data.match(reChidren);
@@ -160,7 +201,14 @@ function findFirstChild(data, selector) {
   return child;
 }
 
-// Looks for the first top level array element in a string and structures it .
+/**
+ * This function takes a list of data elements, identifies nested children within an element,
+ * and expands those children to create a flattened list.
+ *
+ * @param {string} data - The string containing JSON data with an array element.
+ * @param {string} selector - The selector for the type of element to extract (e.g., "{}" for objects).
+ * @returns {string} The structured array element as a string.
+ */
 async function expandChildren(list) {
   for (let i = 0; i < list.length; i++) {
     const children = extractTopLevelElement(list[i], "[]");
@@ -186,7 +234,14 @@ async function expandChildren(list) {
   return list;
 }
 
-// Looks up the element in the list coresponding to the given slug and returns it .
+/**
+ * This function looks for a specific selector, extracts the child element based on that selector,
+ * and returns the extracted child.
+ *
+ * @param {string} data - The data in which to search for the child element.
+ * @param {string} selector - The selector used to identify the child element.
+ * @returns {string} The extracted child element.
+ */
 function findSlugChild(data, selector) {
   const reChidren = /children/;
   const match = data.match(reChidren);
@@ -196,7 +251,13 @@ function findSlugChild(data, selector) {
   return child;
 }
 
-//takes a given array, looks for nested objects and destructures them.
+/**
+ * Extracts and parses object data from a given field data and appends it to a list.
+ *
+ * @param {string} fieldData - The field data to extract object data from.
+ * @param {Array<string>} list - An array to store the extracted object data.
+ * @returns {Array<string>} An array containing the extracted object data.
+ */
 function getObjectData(fieldData, list) {
   let startIndex = 0;
   while (startIndex < fieldData.length) {
@@ -213,7 +274,13 @@ function getObjectData(fieldData, list) {
   return list;
 }
 
-// Scrapes the script of a web page to find the text data based on the slug of the blog post.
+/**
+ * Scrapes the script of a web page to find the text data based on the provided slug.
+ *
+ * @param {string} slug - The slug of the blog post to extract text for.
+ * @returns {Promise<string>} A Promise that resolves with the extracted text data.
+ * @throws {Error} Throws an error if data retrieval or text extraction fails.
+ */
 async function scriptScraper(slug) {
   try {
     endpoint =
@@ -254,7 +321,12 @@ async function scriptScraper(slug) {
   }
 }
 
-// Scrapes the index script of a web page to find the text data based on the slug of the blog post.
+/**
+ * This function extracts slugs based on a specific script and returns them in an array.
+ *
+ * @returns {Promise<string[]>} A Promise that resolves with an array of slugs found in the script.
+ * @throws {Error} Throws an error if data retrieval or slug extraction fails.
+ */
 async function indexScraper() {
   try {
     endpoint =
@@ -306,7 +378,14 @@ async function indexScraper() {
   }
 }
 
-// Gets the data for a single link and returns it as an object.
+/**
+ * Retrieves data for a single link and returns it as an object.
+ *
+ * @param {string} endpoint - The URL of the web page to scrape.
+ * @param {function} [scraperFunction] - Optional custom scraper function to extract text data based on the post slug.
+ * @returns {Promise<Object>} A Promise that resolves with an object containing scraped data.
+ * @throws {Error} Throws an error if data retrieval or processing fails.
+ */
 async function getData(endpoint, scraperFunction) {
   try {
     const data = await fetchDataService.fetchData(endpoint);
@@ -345,7 +424,14 @@ async function getData(endpoint, scraperFunction) {
   }
 }
 
-// Gets the data for a all the links and returns it as a list.
+/**
+ * Retrieves data for multiple links and returns them as a list of objects.
+ *
+ * @param {string[]} links - An array of URLs of the web pages to scrape.
+ * @param {function} [scraperFunction] - Optional custom scraper function to extract text data based on the post slug.
+ * @returns {Promise<Object[]>} A Promise that resolves with a list of objects, each containing scraped data.
+ * @throws {Error} Throws an error if data retrieval or processing fails.
+ */
 async function getAllAsync(links, scraperFunction) {
   try {
     const promises = links.map(link => getData(link, scraperFunction));
