@@ -74,16 +74,29 @@ For each endpoint, replace YOUR_WEB_PAGE_URL with the URL of the web page you wa
 
 ## Using the test blog https://wsa-test.vercel.app/
 
-Sample responses and data structure information can be found in the API documentation at  ``` http://localhost:5000/api-docs/  ``` 
-Use the endpoint  ``` https://wsa-test.vercel.app ``` for multiple pages and  ``` https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food)https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food``` or similar for a single page retrieval. 
+Sample responses and data structure information can be found in the API documentation at 
+``` http://localhost:5000/api-docs/  ``` 
+
+Use the endpoint  ``` https://wsa-test.vercel.app ``` 
+
+for multiple pages and 
+``` https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food)https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food``` 
+
+or similar for a single page retrieval. 
 
 #OR
 
 Test the endpoint yourself:
+
 GET```http://localhost:5000/data?url=https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food)https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food```
+
 GET```http://localhost:5000/data-from-script?url=https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food)https://wsa-test.vercel.app/blog/the-disappointing-reality-of-junk-food```
+
 GET```http://localhost:5000/pages?url=https://wsa-test.vercel.app```
+
 GET```http://localhost:5000/getAll?url=https://wsa-test.vercel.app``
+
 GET```http://localhost:5000/get-all-from-script?url=https://wsa-test.vercel.app``
+
 
 
