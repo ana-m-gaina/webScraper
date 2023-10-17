@@ -77,18 +77,18 @@ For each endpoint, replace YOUR_WEB_PAGE_URL with the URL of the web page you wa
 ## Response
 Each endpoint returns an object or a list of objects, and each object contains the following properties:
 
--id: An identifier for the content.
--title: The title of the content.
--slug: A URL-friendly version of the title.
--url: The URL where the content can be accessed.
--description: A brief description or summary of the content.
--postdate: The publication date of the content in "YYYY-MM-DD" format.
--category: The category or topic to which the content belongs.
--image: The URL or path to an image associated with the content.
--author: The name of the content's author.
--articletext: The main text or body of the content, typically containing the article's content.
--wordCount: The number of words in the article.
--sentiment: The sentiment associated with the content, which can be "positive," "negative," or "neutral."
+-id: An identifier for the content. <br />
+-title: The title of the content. <br />
+-slug: A URL-friendly version of the title. <br />
+-url: The URL where the content can be accessed. <br />
+-description: A brief description or summary of the content. <br />
+-postdate: The publication date of the content in "YYYY-MM-DD" format. <br />
+-category: The category or topic to which the content belongs. <br />
+-image: The URL or path to an image associated with the content. <br />
+-author: The name of the content's author. <br />
+-articletext: The main text or body of the content, typically containing the article's content. <br />
+-wordCount: The number of words in the article. <br />
+-sentiment: The sentiment associated with the content, which can be "positive," "negative," or "neutral."<br />
 -sentimentScore: A score indicating the sentiment of the content. It's calculated based on a predefined dictionary of words and scores ranging from -5 to +5. If the score is lower than -5, the sentiment is considered negative, if it's higher than +5, it's positive; otherwise, it's neutral.
 
 ## Using the test blog https://wsa-test.vercel.app/
