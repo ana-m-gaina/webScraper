@@ -2,12 +2,12 @@ import { ScrapeComponent } from "./components/ScrapeComponent";
 
 function App() {
   const endpointsSingle = [
-    "http://localhost:5000/data",
-    "http://localhost:5000/data-from-script",
+    "https://webscraper01-e3942cf1e1f6.herokuapp.com/data",
+    "https://webscraper01-e3942cf1e1f6.herokuapp.com/data-from-script",
   ];
   const endpointsMultiple = [
-    "http://localhost:5000/getAll",
-    "http://localhost:5000/get-all-from-script",
+    "https://webscraper01-e3942cf1e1f6.herokuapp.com/getAll",
+    "https://webscraper01-e3942cf1e1f6.herokuapp.com/get-all-from-script",
   ];
 
   return (
