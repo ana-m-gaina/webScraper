@@ -2,6 +2,9 @@
 This API provides endpoints to scrape and retrieve data from web pages. 
 It offers various options, including scraping data from single web pages, using custom scripts for extraction, fetching links from web pages, and collecting data from multiple linked web pages.
 
+# Demo
+https://youtu.be/HnFd5NT9_fw
+
 ## Prerequisites
 
 Before using the Web Scraper API, ensure you have the following installed:
