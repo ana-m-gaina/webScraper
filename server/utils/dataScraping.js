@@ -72,7 +72,10 @@ async function getProps(data) {
  * @returns {Promise<string>} A Promise that resolves to the scraped text data.
  */
 async function textScraper(endpoint) {
-  const browser = await puppeteer.launch({ headless: "true" });
+  const browser = await puppeteer.launch({
+    headless: "true",
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
   const page = await browser.newPage();
   await page.goto(endpoint);
   await page.waitForSelector("body");
@@ -119,7 +122,10 @@ async function textScraper(endpoint) {
  * @returns {Promise<{ links: string[] }>} A Promise that resolves to an object containing an array of links.
  */
 async function linkScraper(endpoint) {
-  const browser = await puppeteer.launch({ headless: "true" });
+  const browser = await puppeteer.launch({
+    headless: "true",
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
   const page = await browser.newPage();
   await page.goto(endpoint);
 
