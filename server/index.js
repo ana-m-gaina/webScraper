@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = 5000;
+// const PORT = 5000;
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./swaggerDef.js");
 const routes = require("./routes");
